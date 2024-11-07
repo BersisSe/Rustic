@@ -9,7 +9,7 @@ Rustic is a fast, powerful, and developer-friendly static site generator (SSG) w
 - **Customizable Templating with Tera**: Rustic integrates Tera templates, allowing you to design your site layout with full flexibility and apply reusable themes across pages.
 - **Automatic Asset Management**: Automatically copies static files (CSS, JS, images) to the output directory for efficient asset handling.
 - **Cross-Platform Support**: Developed to work on major platforms (Windows, macOS, and Linux), enabling teams to work seamlessly across environments.
-- **Parallelized File Processing**: Uses Rayon to ensure that file handling and content processing are optimized for speed and scale.
+
 
 ### Why Choose Rustic?
 
