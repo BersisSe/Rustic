@@ -1,6 +1,6 @@
 # **This is the alpha version**
 - *This version is unstable and not recomended for procution use*
-- *This version is usully used for feature tests and it might not work like literaly
+- *This version is usully used for feature tests and it might not work like literaly*
 
 
 
