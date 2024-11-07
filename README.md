@@ -1,3 +1,9 @@
+# **This is the alpha version**
+- *This version is unstable and not recomended for procution use*
+- *This version is usully used for feature tests and it might not work like literaly
+
+
+
 # Rustic - A Lightweight, High-Performance Static Site Generator in Rust 🦀
 
 Rustic is a fast, powerful, and developer-friendly static site generator (SSG) written in Rust, designed to streamline the process of building static websites and documentation sites. Built with a focus on simplicity, speed, and extensibility, Rustic empowers developers to create robust websites with ease—while leveraging the performance and safety benefits of Rust.
