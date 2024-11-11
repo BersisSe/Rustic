@@ -25,7 +25,6 @@ Rustic is designed with Rust developers and the Rust community in mind, offering
   2. **Add to PATH**: Add the file you just downloaded to your os's PATH.
   3. **Usage**: Use `rustic init` to start a project **Dont rename the folders!**.
   4. **Build**: Run `rustic build` to generate a complete, static website in miliseconds.
-  5. 
 ### Contributing
 
 We welcome contributions! Whether it’s reporting bugs, adding features, or improving documentation, every contribution is valuable to us and to the Rust ecosystem.
