@@ -1,6 +1,6 @@
 [package]
 name = "rustic-ssg"
-version = "0.1.0"
+version = "alpha 0.0.1"
 authors = ["BersisSe"]
 description = "A simple, efficient static site generator written with Rust."
 license = "Apache-2.0"
