@@ -7,7 +7,7 @@ license = "Apache-2.0"
 edition = "2021"
 repository = "https://github.com/BersisSe/Rustic" 
 readme = "README.md"
-keywords = ["static-site-generator", "cli", "markdown"]
+keywords = ["ssg", "cli", "markdown"]
 categories = ["command-line-utilities", "web-programming"]
 
 [dependencies]
