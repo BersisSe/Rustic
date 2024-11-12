@@ -1,10 +1,14 @@
 [package]
-name = "Rustic"
+name = "rustic-ssg"
 version = "0.1.0"
 authors = ["BersisSe"]
 description = "A simple, efficient static site generator written with Rust."
 license = "Apache-2.0"
 edition = "2021"
+repository = "https://github.com/BersisSe/Rustic" 
+readme = "README.md"
+keywords = ["static-site-generator", "cli", "markdown"]
+categories = ["command-line-utilities", "web-programming"]
 
 [dependencies]
 clap = { version = "4.5.20", features = ["derive"] }
