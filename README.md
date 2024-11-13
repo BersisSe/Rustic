@@ -78,7 +78,7 @@ Rustic is under active development, with new features and performance improvemen
 ### Contributing
 
 We’re actively seeking contributions! Whether it’s fixing bugs, suggesting features, improving documentation, or optimizing performance, we appreciate all contributions.  
-Please check the [Contributing Guidelines](https://github.com/your-repo/CONTRIBUTING.md) for details on how to get started.
+Please check the [Contributing Guidelines](https://github.com/BersisSe/Rustic/CONTRIBUTING.md) for details on how to get started.
 
 ---
 
