@@ -50,7 +50,7 @@ Rustic is built for developers who want a powerful, Rust-based alternative to tr
 
 #### Installation via Releases
 1. **Download Latest Release**:  
-   Visit the [Releases page](https://github.com/your-repo/releases) and download the latest executable for your OS.
+   Visit the [Releases page](https://github.com/BersisSe/Rustic/releases) and download the latest executable for your OS.
 
 2. **Add to PATH**:  
    Add the executable to your OS’s PATH to use `rustic` commands globally.
