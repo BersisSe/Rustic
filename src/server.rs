@@ -58,7 +58,8 @@ fn handle_connection(mut stream: TcpStream, output_dir: &str) -> std::io::Result
             }
         }
     } else {
-        let response = "HTTP/1.1 405 METHOD NOT ALLOWED\r\nContent-Length: 23\r\n\r\n405 Method Not Allowed";
+        let response =
+            "HTTP/1.1 405 METHOD NOT ALLOWED\r\nContent-Length: 23\r\n\r\n405 Method Not Allowed";
         stream.write_all(response.as_bytes())?;
     }
 

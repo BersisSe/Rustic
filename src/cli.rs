@@ -20,7 +20,7 @@ pub enum Commands {
         #[arg(short, long, default_value = "output")]
         output: String,
     },
-    
+
     /// Starts a local server to preview the site
     Serve,
 
