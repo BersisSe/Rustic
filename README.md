@@ -3,7 +3,7 @@
 > *This version may be unstable and is primarily intended for testing and gathering feedback on features.*
 
 ---
-![Untitled design](https://github.com/user-attachments/assets/48f636ef-9121-4e15-9841-52565a4d9264)
+
 
 # Rustic - A Lightweight, High-Performance Static Site Generator in Rust 🦀
 
