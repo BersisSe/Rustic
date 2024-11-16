@@ -64,13 +64,13 @@ Rustic is built for developers who want a powerful, Rust-based alternative to tr
 
 Rustic is under active development, with new features and performance improvements planned. Key upcoming features include:
 
-- **Theming and CSS Support**  
+- **Theming and CSS Support** (Completed✅)
    Pre-built themes for quick styling options and flexibility to add custom CSS.
 
-- **Performance Optimization**  
+- **Performance Optimization** (Ongoing..😬)
    Multi-threaded processing and caching mechanisms to further speed up build times.
 
-- **Scripting Integration**  
+- **Scripting Integration** 
    Support for JavaScript, Lua, and Python to add dynamic functionality like API data fetching.
 
 ---
