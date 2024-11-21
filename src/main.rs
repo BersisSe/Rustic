@@ -7,16 +7,12 @@ mod server;
 mod templating;
 mod meta;
 
-
-
 use clap::Parser;
 use cli::{ Cli, Commands };
 use dialoguer::Input;
 use templating::TemplateEngine;
 use std::path::Path;
 use std::time::SystemTime;
-
-
 
 fn main() {
     let cli = Cli::parse();
@@ -40,35 +36,9 @@ fn main() {
         }
     }
 }
-/* 
+
 fn build_site(input: &str, output: &str) {
-    clean_output();
     let now = SystemTime::now();
-    let conf = Config::load("./rustic.config.json");
-    let mut content_html: String = "null".to_string();
-    let files = file_handler::read_folder_contents(input).expect("Failed The Read input directory");
-    
-    for file in files {
-        content_html = parser::markdown_to_html(&file);
-    }
-
-    let mut context = tera::Context::new();
-    context.insert("config", &conf);
-    context.insert("content", &content_html);
-
-    let engine = templating::TemplateEngine::new("templates");
-    let render_result = engine.render("index.html", &context).unwrap();
-    let output = Path::new(output);
-
-    file_handler::write_file(output.join("index.html").to_str().unwrap(), render_result)
-        .expect("Error While Writing HTML");
-    file_handler::copy_themes(output)
-        .expect("Error While Copying Themes");
-    let elapsed = now.elapsed().unwrap();
-    println!("Project Built in {:?} !", elapsed)
-}
-*/
-fn build_site(input: &str, output: &str) {
     let config = config::Config::load("rustic.config.json")
         .expect("Could not load the config file (maybe the file is missing)");
     let engine = TemplateEngine::new("templates", "content/meta.json");
@@ -116,7 +86,9 @@ fn build_site(input: &str, output: &str) {
     }
     file_handler::copy_themes(Path::new(output),&config)
         .expect("Error While Copying Themes");
-    println!("Build completed successfully!");
+    let elapsed = now.elapsed().unwrap();
+   
+    println!("Build completed successfully! {:?}" , elapsed);
 }
 
 

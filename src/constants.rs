@@ -8,15 +8,14 @@ pub const BASE_HTML_CONTENT: &str = r#"
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="{{ description | default('Default description for your site') }}">
-    <meta name="keywords" content="{{ keywords | default('default, keywords, for, site') }}">
-    <meta name="author" content="{{ author | default('Your Name') }}">
+    <meta name="description" content="{{ description  }}">
+    <meta name="keywords" content="{{ keywords }}">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ title | default('Default Title') }}">
-    <meta property="og:description" content="{{ description | default('Default description for your site') }}">
+    <meta property="og:title" content="{{ config.title }}">
+    <meta property="og:description" content="{{ description }}">
     <title>{{ config.title }}</title>
     <link rel="stylesheet" href="{{config.theme}}.css">
-    <link rel="canonical" href="{{ canonical | default('https://www.yoursite.com') }}">
+
 </head>
 <body>
     <header>
@@ -27,12 +26,8 @@ pub const BASE_HTML_CONTENT: &str = r#"
     </main>
 </body>
 </html>
-
-
 "#;
-
 pub const DARK_CSS: &str = r#"
-
 :root {
     --background-color: #121212;
     --text-color: #e0e0e0;
@@ -98,11 +93,7 @@ footer {
     background-color: #333333;
 }
 "#;
-
 pub const LIGHT_CSS: &str = r#"
-
-:/* light.css */
-
 :root {
     --background-color: #ffffff;
     --text-color: #333333;
@@ -168,8 +159,6 @@ footer {
     background-color: #eeeeee;
 }
 "#;
-
-
 pub const META: &str = r#"
 {
   "pages": {
@@ -181,6 +170,5 @@ pub const META: &str = r#"
             }
     }
 }
-
 "#;
 
