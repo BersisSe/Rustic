@@ -1,7 +1,7 @@
 # **Rustic - Alpha Version** 🚧
 > *This is an early alpha version and is not recommended for production use.*  
 > *This version may be unstable and is primarily intended for testing and gathering feedback on features.*
-
+>Last Update Notes:Fixed The "init" Command creating non working templates
 ---
 
 
