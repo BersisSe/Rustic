@@ -1,6 +1,6 @@
 [package]
 name = "rustic-ssg"
-version = "0.0.22"
+version = "0.0.3"
 authors = ["BersisSe"]
 description = "A simple, efficient static site generator written with Rust."
 license = "Apache-2.0"
@@ -12,8 +12,10 @@ categories = ["command-line-utilities", "web-programming"]
 
 [dependencies]
 clap = { version = "4.5.20", features = ["derive"] }
+colored = "2.1.0"
 ctrlc = "3.4.5"
 dialoguer = "0.11.0"
+notify = "7.0.0"
 pulldown-cmark = "0.12.2"
 rayon = "1.10.0"
 serde = { version = "1.0.214", features = ["derive"] }

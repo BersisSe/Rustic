@@ -24,6 +24,7 @@ pub const BASE_HTML_CONTENT: &str = r#"
     <main>
         {{ content | safe }}
     </main>
+    
 </body>
 </html>
 "#;

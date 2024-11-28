@@ -8,31 +8,49 @@ mod templating;
 mod meta;
 
 use clap::Parser;
-use cli::{ Cli, Commands };
+use cli::{Cli, Commands};
 use dialoguer::Input;
 use templating::TemplateEngine;
 use std::path::Path;
 use std::time::SystemTime;
+use rayon::prelude::*;
+const VERSION: &str = env!("CARGO_PKG_VERSION");
 
 fn main() {
+    // Parse the CLI arguments
     let cli = Cli::parse();
 
-    match &cli.command {
-        Commands::Build { input, output } => {
+    // Check if the --version flag is set
+    if cli.version {
+        // Print the version and exit
+        println!("Rustic version: {}", VERSION);
+        return;
+    }
+
+    // Proceed with subcommand logic if --version was not passed
+    match cli.command {
+        Some(Commands::Build { input, output }) => {
             println!("Building site...");
-            build_site(input, output);
+            build_site(input.as_str(), output.as_str());
         }
-        Commands::Serve => {
+        Some(Commands::Serve) => {
             let config = config::Config::load("rustic.config.json").expect("Could not load the config file(Maybe The File is missing)");
-            server::run_server(&config.base_url, "output").unwrap();
+            server::run_server_with_hot_reload(&config.base_url, "output", "content", || {
+                build_site("content", "output");
+            })
+            .unwrap();
         }
-        Commands::Clean => {
+        Some(Commands::Clean) => {
             println!("Cleaning output directory...");
             clean_output();
         }
-        Commands::Init => {
-            println!("Initialzing");
+        Some(Commands::Init) => {
+            println!("Initializing project...");
             init_project();
+        }
+        None => {
+            // If no subcommand is provided, display a message (or do something else)
+            eprintln!("No subcommand provided. Use --help for more info.");
         }
     }
 }
@@ -46,17 +64,19 @@ fn build_site(input: &str, output: &str) {
     // Clear output directory
     file_handler::clear_output(output).expect("Failed to clear output directory");
 
-    // Traverse content files
     let content_files = file_handler::read_folder(input).unwrap();
-
-    for file in content_files {
-        // Skiping metadata file
+    content_files.par_iter().for_each(|file| {
         if file.file_name().map(|f| f == "meta.json").unwrap_or(false) {
-            continue;
+            return;
         }
         // Read Markdown content
-        let file_content = std::fs::read_to_string(&file)
-            .expect("Failed to read Markdown file");
+        let file_content = match std::fs::read_to_string(file) {
+            Ok(content) => content,
+            Err(_) => {
+                eprintln!("Failed to read Markdown file: {:?}", file);
+                return;
+            }
+        };
 
         // Convert Markdown to HTML
         let html = parser::markdown_to_html(&file_content);
@@ -83,16 +103,18 @@ fn build_site(input: &str, output: &str) {
             eprintln!("Could not determine file stem for {:?}", file);
             std::process::exit(3)
         }
+    });
+
+    if let Err(e) = file_handler::copy_static(Path::new("static"), Path::new("output/static")) {
+        eprintln!("Error copying static files: {}", e);
+    } else {
+        println!("Static files copied successfully!");
     }
-    file_handler::copy_themes(Path::new(output),&config)
+    file_handler::copy_themes(Path::new(output), &config)
         .expect("Error While Copying Themes");
     let elapsed = now.elapsed().unwrap();
-   
-    println!("Build completed successfully! {:?}" , elapsed);
+    println!("Build completed successfully! {:?}", elapsed);
 }
-
-
-
 
 fn init_project() {
     let project_name: String = Input::new()

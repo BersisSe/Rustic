@@ -1,14 +1,18 @@
 use crate::config::Config;
 use crate::constants::*;
+use rayon::prelude::*;
 use serde_json::to_writer_pretty;
 
 
-use std::fs;
 
+
+use std::fs;
 use std::io;
 use std::path::Path;
 use std::path::PathBuf;
 use std::io::Write;
+
+
 
 pub fn read_folder(path: &str) -> io::Result<Vec<PathBuf>>{
     let mut output = Vec::new();
@@ -20,15 +24,6 @@ pub fn read_folder(path: &str) -> io::Result<Vec<PathBuf>>{
     }
     Ok(output)
 }
-
-
-
-
-
-
-
-
-
 
 pub fn write_file(path: &str, contents: String) -> io::Result<()> {
     let path = Path::new(path);
@@ -113,5 +108,30 @@ pub fn copy_themes(output: &Path, config: &Config) -> io::Result<()>{
     let file = output.join(format!("{}.css", &config.theme));
     fs::copy(&theme, file)?;
     
+    Ok(())
+}
+
+pub fn copy_static(static_dir : &Path, dest: &Path) -> io::Result<()>{
+    if !static_dir.is_dir() {
+        return Err(io::Error::new(io::ErrorKind::NotFound, "Source directory not found"));
+    }
+    fs::create_dir_all(dest)?;
+    let dir = fs::read_dir(static_dir)?;
+
+    dir.par_bridge().for_each(|entry|{
+        let entry = entry.unwrap();
+        let entry_path = entry.path();
+
+        let relative_path = entry_path.strip_prefix(static_dir).unwrap();
+        let target_path = dest.join(relative_path);
+
+        if entry_path.is_dir() {
+            // Recursively copy subdirectories
+            copy_static(&entry_path, &target_path).expect("Recurse Error");
+        } else if entry_path.is_file() {
+            // Copy files
+            fs::copy(&entry_path, &target_path).expect("Copy Error");
+        }
+    });
     Ok(())
 }
