@@ -16,7 +16,7 @@ Rustic is built for developers who want a powerful, Rust-based alternative to tr
 ### Contributing
 
 We’re actively seeking contributions! Whether it’s fixing bugs, suggesting features, improving documentation, or optimizing performance, we appreciate all contributions.  
-Please check the [Contributing Guidelines](https://github.com/BersisSe/Rustic/blob/alpha/CONTRIBUTING.md) for details on how to get started.
+Please check the [Contributing Guidelines](https://github.com/BersisSe/Rustic-core/blob/main/CONTRIBUTING.md) for details on how to get started.
 
 ---
 
