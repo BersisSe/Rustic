@@ -27,7 +27,7 @@ Add the binary to your system PATH to use it globally.
 ### **3. Build from Source**
 Clone the repository and build using Cargo:
 ```bash
-git clone https://github.com/your-username/rustic-core.git
+git clone https://github.com/BersisSe/rustic-core.git
 cd rustic-core
 cargo build --release
 ```
