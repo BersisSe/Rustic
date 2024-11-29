@@ -1,24 +1,84 @@
-# Rustic - A Lightweight, High-Performance Static Site Generator in Rust 🦀
-
-Rustic is a fast, flexible, and developer-friendly static site generator (SSG) written in Rust. Designed to simplify the process of building static websites and documentation sites, Rustic combines speed and extensibility with the power of Rust’s performance and safety. Build rich, responsive sites effortlessly with a focus on efficiency and simplicity.
-
-### Key Features
-
-
-
-### Why Choose Rustic?
-
-Rustic is built for developers who want a powerful, Rust-based alternative to traditional static site generators like Hugo. By leveraging Rust’s speed, safety, and ecosystem, Rustic is designed for unmatched performance and ease of use. Whether you’re building a blog, documentation, or portfolio, Rustic simplifies the creation of static websites with intuitive commands and fast builds.
+# Rustic 🌲  
+**Rustic** is a fast and minimalistic static site generator built with Rust. Create stunning websites with simplicity, flexibility, and lightning-fast performance.
 
 ---
 
-
-### Contributing
-
-We’re actively seeking contributions! Whether it’s fixing bugs, suggesting features, improving documentation, or optimizing performance, we appreciate all contributions.  
-Please check the [Contributing Guidelines](https://github.com/BersisSe/Rustic-core/blob/main/CONTRIBUTING.md) for details on how to get started.
+## 🚀 Features
+- **Dynamic Markdown to HTML conversion** with templating support.  
+- **Lightning-fast builds** leveraging Rust's performance.  
+- **Live preview server** with **hot reload**.  
+- **Customizable themes and templates**.  
+- **Simple CLI for seamless workflows**.
 
 ---
 
-### *Note*
+## 📥 Installation
+
+### **1. Install via Cargo**
+Ensure you have [Rust installed](https://rustup.rs/), then run:
+```bash
+cargo install rustic-ssg
+```
+
+### **2. Download Prebuilt Binaries**
+Download prebuilt binaries from the [Releases Page](https://github.com/BersisSe/rustic-core/releases).  
+Add the binary to your system PATH to use it globally.
+
+### **3. Build from Source**
+Clone the repository and build using Cargo:
+```bash
+git clone https://github.com/your-username/rustic-core.git
+cd rustic-core
+cargo build --release
+```
+Move the resulting binary (`target/release/rustic`) to a directory in your PATH.
+
+---
+
+## 🛠️ Usage
+
+### **Commands**
+| Command         | Description                                   |
+|------------------|-----------------------------------------------|
+| `rustic init`   | Initialize a new Rustic project.             |
+| `rustic build`  | Generate the static site in the `output/` folder. |
+| `rustic serve`  | Start a local server with hot reload.         |
+| `rustic clean`  | Remove the `output/` directory.               |
+| `rustic help`   | Display command usage and options.            |
+
+### **Example Workflow**
+1. **Initialize a project**:
+   ```bash
+   rustic init
+   cd my-rustic-site
+   ```
+2. **Build the site**:
+   ```bash
+   rustic build
+   ```
+3. **Preview locally**:
+   ```bash
+   rustic serve
+   ```
+4. **Clean the build**:
+   ```bash
+   rustic clean
+   ```
+
+---
+
+## ✨ Documentation
+Detailed guides and examples are available in the [Documentation](https://bersisse.github.io/rustic-core/).
+
+---
+
+## 🌍 Community
+- **Contributions** are welcome! Check the [Contributing Guide](CONTRIBUTING.md).  
+- Report bugs or suggest features via [GitHub Issues](https://github.com/BersisSe/rustic-core/issues).
+
+---
+
+## 📜 License
+Rustic is open-source software, licensed under the [Apache-2.0 License](LICENSE).
+
 
