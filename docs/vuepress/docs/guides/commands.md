@@ -23,13 +23,13 @@ rustic init
   │   └── light.css
   ├── content/
   │   └── index.md
-  │   └── meta.json
+  │   └── meta.yaml
   ├── templates/default/
   │   └── base.html
   └── rustic.config.json
   ```
 
-- **content/**: Stores your Markdown content and `meta.json`.
+- **content/**: Stores your Markdown content and `meta.yaml`.
 - **themes/**: Contains built-in and custom themes.
 - **static/**: Holds static assets like images and styles.
 - **templates/**: Contains HTML templates for your site.

@@ -6,7 +6,7 @@
 ### Template Structure
 - **Placeholders**:
   - `{content}`: Main content.
-  - `{title}`: Page title (from `meta.json`).
+  - `{title}`: Page title (from `meta.yaml`).
 - Default folder structure:
   ```
   templates/

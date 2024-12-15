@@ -11,8 +11,8 @@
 - **Code Blocks**: \```rust\`, \```html\`, etc.
 
 ### Metadata Files
-- Explain the role of `meta.json` in organizing content.
-- Example `meta.json` file:
+- Explain the role of `meta.yaml` in organizing content.
+- Example `meta.yaml` file:
   ```json
   {
     "title": "My Blog Post",
@@ -20,7 +20,7 @@
     "date": "2024-11-24"
   }
   ```
-- How `meta.json` enhances content generation (e.g., automatic title tags).
+- How `meta.yaml` enhances content generation (e.g., automatic title tags).
 
 ### Advanced Features
 - Adding inline HTML for custom styling.

@@ -84,7 +84,7 @@ To build from source:
    │   └── light.css
    ├── content/
    │   └── index.md
-   │   └── meta.json
+   │   └── meta.yaml
    ├── templates/default/
    │   └── base.html
    └── rustic.config.json

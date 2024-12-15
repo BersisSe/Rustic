@@ -1,3 +1,7 @@
+---
+
+
+---
 # Welcome to Rustic Documentation 🌲
 
 Rustic is a blazing-fast static site generator designed for simplicity, speed, and scalability. Whether you're creating a blog, portfolio, or business site, Rustic gives you the tools you need to get started quickly.
@@ -7,7 +11,7 @@ Rustic is a blazing-fast static site generator designed for simplicity, speed, a
 ## 📖 Documentation Overview
 Use this guide to master Rustic:
 
-- [Getting Started](getting_started.md): Learn how to install Rustic and create your first site.
+- [Getting Started](getting-started.md): Learn how to install Rustic and create your first site.
 - [Commands](commands.md): Explore the CLI commands for building, serving, and managing your site.
 - [Writing Content](writing.md): Write Markdown content effectively.
 - [Templating](templating.md): Use templates for dynamic and reusable layouts.
